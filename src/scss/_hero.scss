@@ -1,0 +1,40 @@
+.hero {
+  // grid-area: hero;
+  position: relative;
+  overflow: hidden;
+  // background-color: $white;
+
+  height: $hero-height;
+  padding-top: 16vh;
+  padding-bottom: 2vh;
+  z-index: 8;
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__text-box {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    max-width: 90%;
+    z-index: 6;
+    font-family: 'Roboto Condensed';
+    .hero__title {
+      font-size: 11vw;
+      letter-spacing: -0.5px;
+      font-weight: 400;
+      text-transform: uppercase;
+      line-height: 2;
+    }
+  }
+  &__cta {
+    align-self: flex-end;
+    font-size: $cta-height;
+    text-transform: uppercase;
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+}

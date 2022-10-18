@@ -1,0 +1,185 @@
+.header {
+  grid-area: header;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  font-family: 'Roboto Condensed';
+  // &_-wrapper {
+  //   position: relative;
+  // }
+  &__nav--main {
+    position: absolute;
+    height: 100vh;
+    top: calc(5rem - 100vh);
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid $main-shade60;
+    backdrop-filter: blur(4px);
+    transition: all 0.8s ease-out;
+  }
+  &__nav--main.show-main-menu {
+    transform: translateY(calc(100vh - 5rem));
+    border: none;
+  }
+  &__links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 0.8rem;
+  }
+
+  &__nav--list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10vh;
+    list-style-type: none;
+    font-size: 8vh;
+    a {
+      padding: 1rem;
+      display: inline-block;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $main-shade60;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+
+    a:link,
+    a:visited {
+      cursor: pointer;
+      transition: all 0.4s;
+    }
+    a:hover,
+    a:active {
+      transform: scale(105%);
+      letter-spacing: 2px;
+    }
+  }
+  &__btn--open {
+    border: none;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
+    .burger--inner {
+      position: relative;
+      width: 3rem;
+      height: 0.3rem;
+      border-radius: 1px;
+      // line-height: 0.4rem;
+      background-color: $main-shade60;
+      // margin: 0.4rem;
+      &::after,
+      &::before {
+        position: absolute;
+        content: '';
+        display: inline-block;
+        width: 3rem;
+        height: 0.3rem;
+        border-radius: 1px;
+        background-color: $main-shade60;
+        left: 0;
+      }
+      &::after {
+        top: 0.9rem;
+      }
+      &::before {
+        bottom: 0.9rem;
+      }
+    }
+  }
+
+  &__nav--mobile {
+    z-index: 10;
+    transition-property: opacity, transform;
+    transition-duration: 0.4s, 0s;
+    transition-delay: 0.4s, 0s;
+    &.show-main-menu {
+      transform: translateY(100%);
+      opacity: 0;
+      transition-property: opacity, transform;
+      transition-duration: 0.4s, 0s;
+      transition-delay: 0s, 0.4s;
+    }
+  }
+  &__logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: $main-shade60;
+    letter-spacing: -0.8px;
+    margin-left: 1.6rem;
+  }
+  &__logo:link,
+  &__logo:visited {
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+  &__logo:hover,
+  &__logo:active {
+    transform: scale(105%);
+    opacity: 90;
+  }
+  &__btn--close {
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    color: $main-shade60;
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+}
+.header__links--mail {
+  display: none;
+}
+// .header {
+//   .link-container {
+//     width: $menu-height * 5;
+//     height: $menu-height;
+//     perspective: $menu-height * 3;
+//   }
+//   .cube {
+//     transform: translateZ(-($menu-height * 0.5));
+//   }
+//   .face {
+//     width: $menu-height * 5;
+//     height: $menu-height;
+//     font-size: $menu-height * 0.75;
+//     opacity: 1;
+//   }
+//   .front {
+//     transform: rotateX(0) translateZ($menu-height * 0.5);
+//   }
+//   .bottom {
+//     transform: rotateX(-90deg) translateZ($menu-height * 0.5);
+//   }
+//   .top {
+//     transform: rotateX(90deg) translateZ($menu-height * 0.5);
+//   }
+//   .back {
+//     transform: rotateX(180deg) translateZ($menu-height * 0.5);
+//   }
+// }

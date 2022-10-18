@@ -1,0 +1,12 @@
+/* body {
+  background-color: blue;
+} */
+:root {
+  --background-color-theme-1: #fff;
+  --font-color-theme-1: #444;
+
+  --background-color-theme-2: #666;
+  --font-color-theme-2: #fff;
+
+  --hero-height: 40rem;
+}
