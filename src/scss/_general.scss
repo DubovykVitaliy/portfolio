@@ -70,17 +70,19 @@ body {
 .arrow-link {
   border: 1px solid $main-shade60;
   border-radius: 100px;
-  width: $cta-height;
-  height: calc($cta-height * 2);
+
+  height: calc($cta-height * 2.5);
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 1rem;
+  // padding: 0.2rem;
 
   svg {
-    width: calc($cta-height * 0.8);
+    width: calc($cta-height);
+    // width: calc($cta-height * 0.8);
     height: $cta-height;
-    fill: $main-color;
+    fill: $main-shade60;
     path {
       transform-origin: 50% 50%;
       transform: rotate(90deg);
@@ -96,11 +98,11 @@ body {
   }
 }
 .arrow-down {
+  width: $cta-height;
   svg > path {
     transform: rotate(90deg);
   }
 }
-//
 .section-padding {
   padding: 6rem 0;
 }
@@ -189,107 +191,108 @@ body {
   outline: none !important;
 }
 
-// .link-container {
-//   width: $link-height * 5;
-//   height: $link-height;
-//   perspective: $link-height * 3;
-// }
-
+/////////////////////////////////////////
+.link-container {
+  width: calc($link-height * 5);
+  height: $link-height;
+  perspective: calc($link-height * 3);
+}
 .cube {
   position: relative;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  // transform: translateZ(-($link-height * 0.5));
+  transform: translateZ(calc(($link-height * -0.5)));
   transition: all 0.4s;
 }
-
 .face {
-  // width: $link-height * 5;
-  // height: $link-height;
+  width: calc($link-height * 5);
+  height: $link-height;
+  font-size: calc($link-height * 0.75);
+
   background: $back-color;
   position: absolute;
-  // opacity: 0.9;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: Arial, sans-serif;
   text-transform: uppercase;
   color: $main-shade60;
-  // font-size: $link-height * 0.75;
 }
 .front {
-  transform: rotateX(0) translateZ($link-height * 0.5);
-  // transition: all 1s;
+  transform: rotateX(0) translateZ(calc($link-height * 0.5));
   font-style: normal;
 }
 .bottom {
-  transform: rotateX(-90deg) translateZ($link-height * 0.5);
+  transform: rotateX(-90deg) translateZ(calc($link-height * 0.5));
   font-style: italic;
-  /* transform: ; */
 }
 .top {
-  transform: rotateX(90deg) translateZ($link-height * 0.5);
+  transform: rotateX(90deg) translateZ(calc($link-height * 0.5));
   font-style: italic;
 }
 .back {
-  transform: rotateX(180deg) translateZ($link-height * 0.5);
+  transform: rotateX(180deg) translateZ(calc($link-height * 0.5));
   font-style: normal;
 }
+//
 
 @media (hover: none) {
-  .cube {
-    animation: rotate 8s linear 1s infinite;
-  }
-  .footer a:active {
-    transform: translateY(-0.2rem) scale(1.3);
-    transition: all 0.4s;
+  .footer__links {
+    .cube {
+      animation: rotate 8s linear 1s infinite;
+    }
+    a:hover,
+    a:active {
+      .cube {
+        transition: all 0.4s;
+        transform: scale(1.1);
+      }
+    }
   }
 }
 @media (hover: hover) {
   .footer__links a:hover {
     .cube {
-      transform: rotateX(90deg);
+      transform: translateZ(calc(($link-height * -0.5))) rotateX(90deg);
       transition: all 0.4s;
+    }
+  }
+  .footer__links a:active {
+    .cube {
+      transform: rotateX(90deg);
+      transform: scale(1.1) rotateX(90deg);
+      // transition: all 0.4s;
     }
   }
 }
 
 @keyframes rotate {
   0% {
-    // transform: translateZ(-($link-height * 0.5));
-    transform: rotateX(0);
+    transform: translateZ(calc(($link-height * -0.5))) rotateX(0);
   }
   10% {
-    // transform: translateZ(($link-height));
-    transform: rotateX(90deg);
+    transform: translateZ(calc(($link-height * -0.5))) rotateX(90deg);
   }
   25% {
-    // transform: translateZ(-calc($link-height * 0.5));
-    transform: rotateX(90deg);
+    transform: translateZ(calc(($link-height * -0.5))) rotateX(90deg);
   }
   35% {
-    // transform: translateZ(-($link-height));
-    transform: rotateX(180deg);
+    transform: translateZ(calc(($link-height * -0.5))) rotateX(180deg);
   }
   50% {
-    // transform: translateZ(-($link-height * 0.5));
-    transform: rotateX(180deg);
+    transform: translateZ(calc(($link-height * -0.5))) rotateX(180deg);
   }
   60% {
-    // transform: translateZ(-($link-height * 0.5));
-    transform: rotateX(270deg);
+    transform: translateZ(calc(($link-height * -0.5))) rotateX(270deg);
   }
   75% {
-    // transform: translateZ(-($link-height * 0.5));
-    transform: rotateX(270deg);
+    transform: translateZ(calc(($link-height * -0.5))) rotateX(270deg);
   }
   85% {
-    // transform: translateZ(-($link-height * 0.5));
-    transform: rotateX(360deg);
+    transform: translateZ(calc(($link-height * -0.5))) rotateX(360deg);
   }
   100% {
-    // transform: translateZ(-($link-height * 0.5));
-    transform: rotateX(360deg);
+    transform: translateZ(calc(($link-height * -0.5))) rotateX(360deg);
   }
 }

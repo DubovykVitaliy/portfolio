@@ -12,12 +12,12 @@ import { submitForm } from './modules/form.js';
 import { renderCard } from './modules/main.js';
 import { handleMenu } from './modules/menu.js';
 import observeScrolling from './modules/intersection.js';
+// import  from './modules/intersection.js';
 import screen from './img/screen3.png';
 import screen2 from './img/screen3.png';
 
 import { showModal } from './modules/modal.js';
 
-submitForm();
 const cards = [
   {
     title: 'Portfolio',
@@ -36,7 +36,11 @@ const cards = [
 ];
 cards.forEach((cardData) => renderCard(cardData));
 
+submitForm();
+
 handleMenu();
+
+observeScrolling();
 //
 //Defining window height and passing it into CSS variable.
 //
@@ -59,35 +63,14 @@ handleMatchMedia(mq);
 mq.addEventListener('change', handleMatchMedia);
 
 //
+// This EventListener applied for mailTo anchor because animation marquee
+// interfered in normal work af a tag
+//
 
-observeScrolling();
+document.querySelector('.header__links--mail').addEventListener('click', (e) => {
+  e.preventDefault();
+  window.open('mailto:dubovykve@gmail.com');
+});
+//
 
 export { mqMatch };
-// const imageBox = document.querySelector('.image-box');
-// const hero = document.querySelector('.hero');
-// const main = document.querySelector('.main');
-
-// function checkMatch() {
-//   let size = window.innerWidth;
-//   console.log(size);
-//   if (size >= 1024 && imageBox.closest('.hero')) {
-//     main.insertAdjacentElement('afterbegin', imageBox);
-//     hero.removeChild(imageBox);
-//   }
-// }
-// new ResizeObserver(() => {
-//   window.matchMedia('screen and (min-width: 1024px)').matches && checkMatch();
-//   window.matchMedia('screen and (max-width: 1023px)').matches && checkMatch();
-// }).observe(document.body);
-
-// elem.parentNode.id;
-
-//
-// const sectionObserver = new IntersectionObserver(revealSection, {
-//   root: null,
-//   threshold: 0.15,
-// });
-// allSections.forEach((section) => {
-//   section.classList.add('sec-fade');
-//   sectionObserver.observe(section);
-// });

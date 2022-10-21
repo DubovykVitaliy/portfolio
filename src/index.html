@@ -12,30 +12,58 @@
     <header class="header">
         <nav class="header__nav--main">
           <div class="header__links">
-            <a class="header__logo" href="#">vitaliydubovyk</a>
-            <button class="header__btn--close">CLOSE</button>
+            <a class="header__logo noSelect " href="#">vitaliydubovyk</a>
+            <button class="header__btn--close noSelect">CLOSE</button>
           </div>
-          <a class="header__links--mail" href="mailto:dubovykve@gmail.com">available for work</a>
-          <ul class="header__nav--list">
-            <li><a href="#about">about
-              <!-- <div class="link-container">
-              <div class="cube">
-                <div class="face top">about</div>
-                <div class="face front">about</div>
-                <div class="face bottom">about</div>
-                <div class="face back">about</div>
+          <a href="mailto:dubovykve@gmail.com"  class="header__links--mail noSelect">
+            <div class="marquee-wrapper">
+              <div class="marquee-inner">
+                <span>available for work   </span>
+                <span>dubovykve@gmail.com</span>
               </div>
-            </div> -->
+              <div aria-hidden="true"  class="marquee-inner">
+                <span>available for work   </span>
+                <span>dubovykve@gmail.com</span>
+              </div>
+            </div>
+          </a>
+          <ul class="header__nav--list">
+            <li><a href="#about" class="noSelect">
+              <div class="link-container">
+                <div class="cube">
+                  <div class="face top">about</div>
+                  <div class="face front">about</div>
+                  <div class="face bottom">about</div>
+                  <div class="face back">about</div>
+                </div>
+              </div>
           </a></li>
-            <li><a href="#projects">
-              projects
+            <li><a href="#projects" class="noSelect">
+              <div class="link-container">
+                <div class="cube">
+                  <div class="face top ">projects</div>
+                  <div class="face front ">projects</div>
+                  <div class="face bottom">projects</div>
+                  <div class="face back">projects</div>
+                </div>
+              </div>
+              
             </a></li>
-            <li><a href="#contacts">contacts</a></li>
+            <li><a href="#contacts" class="noSelect">
+              <div class="link-container">
+                <div class="cube">
+                  <div class="face top">contacts</div>
+                  <div class="face front">contacts</div>
+                  <div class="face bottom">contacts</div>
+                  <div class="face back">contacts</div>
+                </div>
+              </div>
+              </a></li>
           </ul>
         </nav>
         <div class="header__links header__nav--mobile">
-          <a class="header__logo" href="#">vitaliydubovyk</a>
-          <button class="header__btn--open">
+          <a class="header__logo noSelect" href="#">vitaliydubovyk</a>
+          <button class="header__btn--open noSelect">
             <div class="burger--inner"></div>
           </button>
         </div>
@@ -48,7 +76,7 @@
             <!-- <h2 class="heading__title">Hello, I'm</h2> -->
             <!-- <h1 class="heading__addition upper">Vitaliy Dubovyk</h1> -->
             <h2 class="hero__title">front-end</h2>
-            <h2 class="hero__title">web developer</h2>
+            <h1 class="hero__title">web developer</h1>
             <h2 class="hero__title">from UKraine</h2>
           </div>
           <div class="hero__cta">
@@ -294,16 +322,25 @@
       <!-- <a href="#"></a> -->
       </div>
       <div class="footer__ending">
-        <span>Designed by Vitaliy Dubovyk</span>
-        <a href="#" class="noSelect">
-          <div class="arrow-up arrow-link">
-            <svg viewBox="0 0 330 180" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M15 105H278.787L229.393 154.394C223.535 160.251 223.535 169.749 229.393 175.607C232.322 178.535 236.161 180 240 180C243.839 180 247.678 178.535 250.606 175.606L325.606 100.606C331.464 94.7488 331.464 85.2508 325.606 79.3928L250.606 4.39275C244.749 -1.46425 235.251 -1.46425 229.393 4.39275C223.535 10.2497 223.535 19.7478 229.393 25.6058L278.787 74.9998H15C6.716 74.9998 0 81.7158 0 89.9998C0 98.2838 6.716 105 15 105Z"
-              />
-            </svg>
+        <div class="footer__wrapper">
+          <div>
+            <span>Designed by Vitaliy Dubovyk</span>
           </div>
-        </a>
+          <a href="#" class="noSelect scroll--top arrow-up">
+            <div >
+              <span>To top</span>
+              <div class="arrow-link">
+                <svg viewBox="0 0 330 180" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15 105H278.787L229.393 154.394C223.535 160.251 223.535 169.749 229.393 175.607C232.322 178.535 236.161 180 240 180C243.839 180 247.678 178.535 250.606 175.606L325.606 100.606C331.464 94.7488 331.464 85.2508 325.606 79.3928L250.606 4.39275C244.749 -1.46425 235.251 -1.46425 229.393 4.39275C223.535 10.2497 223.535 19.7478 229.393 25.6058L278.787 74.9998H15C6.716 74.9998 0 81.7158 0 89.9998C0 98.2838 6.716 105 15 105Z"
+                  />
+                </svg>
+              </div>
+  
+            </div>
+          </a>
+
+        </div>
       </div>
     </footer>
   </body>

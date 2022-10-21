@@ -20,7 +20,10 @@ $hero-height: var(--hero-height);
 $width-1: 480px;
 $width-2: 768px;
 $width-3: 1024px;
-$cta-height: 3vh;
+$width-4: 1200px;
+$cta-height: 2vh;
 
-$link-height: 1.6rem;
+$link-height: max(2rem, 3.5vh);
 $menu-height: 8vh;
+
+$email-height: 1.6vw;

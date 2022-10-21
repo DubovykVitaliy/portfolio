@@ -64,7 +64,7 @@ export const handleMenu = () => {
   toUp.addEventListener('click', (e) => {
     if (mqMatch && e.target.closest('.arrow-up')) {
       e.preventDefault();
-      console.log(e.target.closest);
+      // console.log(e.target.closest);
       topEl.scrollIntoView({ behavior: 'smooth' });
     }
   });

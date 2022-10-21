@@ -1,6 +1,6 @@
 .footer {
   grid-area: footer;
-
+  height: auto;
   &__links {
     grid-area: links;
     display: flex;
@@ -9,47 +9,42 @@
     a {
       transition: all 0.4s;
     }
+    a:active {
+      .cube {
+        transform: scale(1.1);
+        transition: all 0.4s;
+      }
+    }
   }
   &__ending {
     grid-area: ending;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     border-top: 1px solid $main-shade60;
-    padding: 0.5rem 1rem;
-    span {
-      font-size: 1.4rem;
+    padding: 0.5rem;
+    transition: all 0.4s;
+    font-size: max(1.4rem, calc($cta-height * 0.5));
+
+    a:link,
+    a:visited {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: inherit;
     }
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .arrow-top-hidden {
+      transform: translateY(0);
+      transition: all 0.4s;
     }
   }
-  .link-container {
-    width: $link-height * 5;
-    height: $link-height;
-    perspective: $link-height * 3;
+  &__wrapper {
+    @include flex(center, space-between, row);
+    div {
+      height: calc(($cta-height + 2rem));
+      @include flex;
+      span {
+        display: block;
+      }
+    }
   }
-  .cube {
-    transform: translateZ(-($link-height * 0.5));
-  }
-  .face {
-    width: $link-height * 5;
-    height: $link-height;
-    font-size: $link-height * 0.75;
-    opacity: 0.9;
-  }
-  // .front {
-  //   transform: rotateX(0) translateZ($link-height * 0.5);
-  // }
-  // .bottom {
-  //   transform: rotateX(-90deg) translateZ($link-height * 0.5);
-  // }
-  // .top {
-  //   transform: rotateX(90deg) translateZ($link-height * 0.5);
-  // }
-  // .back {
-  //   transform: rotateX(180deg) translateZ($link-height * 0.5);
-  // }
+}
+.scroll--top div {
+  @include flex(center, center, row);
 }

@@ -21,4 +21,24 @@ export default function observeScrolling() {
     section.classList.add('sec-fade');
     observer.observe(section);
   });
+
+  ///////////////////////////////
+  //    Scroll Event for switching arrow pointers
+  ///////////////////////////////
+  function handleScroll() {
+    const scrollArrow = document.querySelector('.hero__cta');
+    const topArrow = document.querySelector('.footer__wrapper');
+    const wrapper = document.querySelector('.wrapper');
+
+    wrapper.addEventListener('scroll', (event) => {
+      if (wrapper.scrollTop > window.innerHeight) {
+        scrollArrow.classList.add('arrow-scroll-hidden');
+        topArrow.classList.add('arrow-top-hidden');
+      } else {
+        scrollArrow.classList.remove('arrow-scroll-hidden');
+        topArrow.classList.remove('arrow-top-hidden');
+      }
+    });
+  }
+  handleScroll();
 }

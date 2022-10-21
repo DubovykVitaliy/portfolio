@@ -47,27 +47,21 @@
     justify-content: center;
     gap: 10vh;
     list-style-type: none;
-    font-size: 8vh;
     a {
       padding: 1rem;
-      display: inline-block;
-      font-weight: 300;
-      text-transform: uppercase;
-      color: $main-shade60;
-      letter-spacing: -0.5px;
       text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
     }
 
-    a:link,
-    a:visited {
-      cursor: pointer;
-      transition: all 0.4s;
-    }
-    a:hover,
-    a:active {
-      transform: scale(105%);
-      letter-spacing: 2px;
-    }
+    // a:link,
+    // a:visited {
+    // }
+    // a:hover,
+    // a:active {
+    //   // transform: scale(105%);
+    //   // letter-spacing: 2px;
+    // }
   }
   &__btn--open {
     border: none;
@@ -152,6 +146,38 @@
     transition: all 0.4s;
   }
 }
+///////////////
+@media (hover: none) {
+  .header__nav--list {
+    .cube {
+      transform: scale(1.6);
+    }
+    .face {
+      background: transparent;
+    }
+    .top,
+    .bottom,
+    .back {
+      opacity: 0;
+    }
+    // a {
+    //   background: transparent;
+    // }
+    a:hover,
+    a:active {
+      letter-spacing: 2px;
+      .cube {
+        transform: scale(0.8);
+        // background: transparent;
+        transition: all 0.2s;
+      }
+      // .face{
+
+      // }
+    }
+  }
+}
+//////////////////
 .header__links--mail {
   display: none;
 }
@@ -183,3 +209,43 @@
 //     transform: rotateX(180deg) translateZ($menu-height * 0.5);
 //   }
 // }
+@keyframes Marquee {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(calc((-50%)));
+  }
+  50% {
+    transform: translateX(calc((-50%)));
+  }
+  80% {
+    transform: translateX(calc(-100%));
+  }
+  100% {
+    transform: translateX(calc(-100%));
+  }
+}
+.marquee-wrapper {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  font-size: $email-height;
+  width: $email-height * 10;
+  padding: 0.2em 0;
+  color: $main-shade60;
+  border: 1px solid $main-shade60;
+  border-radius: 100px;
+}
+.marquee-inner {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  animation: Marquee 10s linear 0s infinite;
+  span {
+    width: $email-height * 10;
+    text-align: center;
+  }
+}
